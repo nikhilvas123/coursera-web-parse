@@ -1,0 +1,16 @@
+<h1>Searcing for <%= @search_term %></h1>
+
+<table border = "1" >
+	<tr>
+		<th>Image</th>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+	<% @courses.each do |course|%>
+	<tr class=<%= cycle('even','odd')%>>
+		<td><%= image_tag(course["partnerLogo"]||"https://www.indiaspora.org/wp-content/uploads/2018/10/image-not-available.jpg")%></td>
+		<td><%= course["name"]%></td>
+		<td><%= course["description"]%></td>
+	</tr>
+	<% end %>
+</table>
